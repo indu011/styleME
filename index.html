@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | styleME</title>
   <link rel="stylesheet" href="styles.css" />
-  
-  <script>
-  if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-</script>
 </head>
 <body>
 <img src="assets/logo.png" alt="StyleMe Logo" class="page-brand-logo" />
@@ -23,6 +17,21 @@
       <li><a href="#">Favorites</a></li>
       <li><a href="#">Profile</a></li>
     </ul>
+    <div class="upload-container">
+      <svg xmlns="http://www.w3.org/2000/svg" class="upload-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M12 2L6 8h3v4h6V8h3zM4 18h16v2H4z"/>
+      </svg>
+    </div>
+
+    <div class="upload-modal" id="uploadModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2>Upload Picture for Recommendations</h2>
+        <input type="file" id="fileInput" accept=".jpg, .jpeg, .webp, .png, .avif"/>
+        <button id="generateRecommendations" disabled>Generate Recommendations</button>
+      </div>
+    </div>
+
     <div class="nav-right">
     <div class="search-bar">
       <input type="text" placeholder="Search outfits..." />
@@ -31,9 +40,11 @@
   </div>
   </nav>
 
+  <p id="noResultsMessage" style="display:none; text-align:center; margin-top: 1rem; color: #e91e63;">
+    No results found.
+  </p>
   <!-- Main Container -->
   <main class="grid-container" id="itemsContainer">
-    
   </main>
 
   <!-- Footer -->

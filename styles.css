@@ -1,4 +1,3 @@
-/* Entire page layout */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #ffffff;
@@ -10,7 +9,7 @@ body {
 }
 
 body.login-page {
-  display: block; /* remove the flex column layout */
+  display: block; 
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -26,14 +25,13 @@ body, html {
 }
 
 main {
-  flex: 1; /* allow main to grow and push footer down */
+  flex: 1; 
   width: 100%;
   max-width: 1200px;
   margin: auto;
   box-sizing: border-box;
 }
 
-/* Brand at the top */
 .page-brand {
   font-size: 3.5rem !important;
   margin-top: 1rem;
@@ -49,9 +47,9 @@ main {
   max-height: 100px;
   width: auto;
   display: block;
-  margin: 1rem auto; /* center it with spacing */
+  margin: 1rem auto; 
 }
-/* Login box */
+
 .login-container {
   background: white;
   padding: 2.5rem;
@@ -67,7 +65,6 @@ main {
   margin-top: -1rem;
 }
 
-/* Inputs */
 input {
   display: block;
   width: 100%;
@@ -77,7 +74,6 @@ input {
   box-sizing: border-box;
 }
 
-/* Password input + eye wrapper */
 .password-wrapper {
   position: relative;
 }
@@ -94,7 +90,6 @@ input {
   cursor: pointer;
 }
 
-/* Button */
 button {
   padding: 0.75rem 2rem;
   font-size: 1rem;
@@ -109,7 +104,6 @@ button:hover {
   background: #333;
 }
 
-/* Branding colors */
 .brand {
   font-weight: bold;
 }
@@ -118,14 +112,12 @@ button:hover {
   color: #e91e63;
 }
 
-/* Error text */
 .error-message {
   color: red;
   margin-top: 1rem;
   font-size: 0.9rem;
 }
 
-/* Navbar styles */
 .navbar {
   background: #e91e63;
   width: 100%;
@@ -150,7 +142,7 @@ button:hover {
 }
 
 .nav-links a {
-  color: white; /* white text */
+  color: white; 
   font-weight: 600;
   font-size: 1.2rem;
   padding-left: 1rem;
@@ -159,10 +151,88 @@ button:hover {
 }
 
 .nav-links a:hover {
-  color: #ffd1dc; /* lighter pink on hover */
+  color: #ffd1dc; 
 }
 
-/* Search bar */
+.upload-container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.upload-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 400px;
+  fill: #ffffff;
+}
+
+.upload-modal {
+  display: none;  
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 100px;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px; 
+  width: 60%; 
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  margin: 20px 0;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #e91e63; 
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px; 
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #dc5f88; 
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .search-bar input {
   padding: 0.45rem 1rem;
   border-radius: 20px;
@@ -170,17 +240,15 @@ button:hover {
   width: 250px;
   font-size: 1rem;
   margin-right: 190px;
-  margin-top: 20.5px; /* aligns better with buttons */
+  margin-top: 20.5px; 
 }
 
-/* New container for right side items */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* Logout button */
 .btn-logout {
   background: #e91e63; 
   color: white;
@@ -198,7 +266,6 @@ button:hover {
   border: 2px solid #e91e63;
 }
 
-/* Modal styles */
 #logoutModal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -245,7 +312,6 @@ button:hover {
   background: #aaa;
 }
 
-/* Grid of items */
 .grid-container {
   padding-left: 1rem;
   padding-top: 1rem;
@@ -261,37 +327,49 @@ button:hover {
   box-sizing: border-box;
 }
 
+#itemsContainer {
+  margin-bottom: 4rem; 
+}
+
 .item-card {
   background: white;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
+  height: 200px;
+  transition: transform 0.2s ease;
 }
 
 .item-card img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  height: 200px;
+  height: 100%;
+  display: block;
 }
 
 .item-card p {
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   font-weight: 500;
   font-size: 1rem;
 }
 
-/* Footer */
+.item-card:hover {
+  transform: scale(1.15);
+  border: 2px solid #e91e63;
+}
+
 .footer {
   background: #e91e63;
   color: white;
   padding: 1.5rem 2rem;
   width: 100%;
   box-sizing: border-box;
-  margin-top: auto;
+  /* margin-top: 100%; */
   flex-shrink: 0;
-  margin-top: auto;
+  margin-bottom: 0px;
+  margin-top: 3100px;
   /* position: relative; */
   /* bottom: 0; */
 }
@@ -339,12 +417,11 @@ button:hover {
 
 .nav-item .icon {
   display: inline-block;
-  height: 1.2em;      /* roughly the text size */
-  width: auto;        /* keep aspect ratio */
+  height: 1.2em;      
+  width: auto;       
   flex-shrink: 0;
 }
 
-/* For mobile */
 @media (max-width: 600px) {
   .login-container {
     width: 90%;
@@ -374,12 +451,15 @@ button:hover {
     font-size: 1rem;
   }
 
+  .upload-icon {
+    margin-left: auto;
+  }
+
   .page-brand {
     font-size: 2.2rem !important;
     margin-top: 1rem;
   }
 
-  /* Navbar stack layout */
   .navbar {
     flex-direction: column;
     align-items: center;
@@ -409,15 +489,16 @@ button:hover {
     width: fit-content;
   }
 
-  /* Grid layout: 2 per row */
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     padding: 1rem 1rem;
     
   }
-
-  /* Footer */
+  
+  .footer {
+    margin-top: 10000px;
+  }
   .footer-content {
     flex-direction: column;
     align-items: center;
